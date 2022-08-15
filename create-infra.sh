@@ -12,6 +12,7 @@ groupadd GRP_VEN
 groupadd GRP_SEC
 
 # usuarios
+# poderia ter utilizado o: usermod -G <grupos-para onde-vai separados por virgula> <nome-do-usuaraio>
 useradd carlos -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_ADM
 useradd maria -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_ADM
 useradd joao -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_ADM
@@ -24,4 +25,9 @@ useradd josefina -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_SEC
 useradd amanda -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_SEC
 useradd rogerio -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_SEC
 
+# determinando owner dos diretorios
+chown root:GRP_ADM /adm
+chown root:GRP_VEN /ven
+chown root:GRP_SEC /sec
 
+# permissão dos diretórios
