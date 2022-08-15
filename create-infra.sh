@@ -13,6 +13,8 @@ groupadd GRP_SEC
 
 # usuarios
 # poderia ter utilizado o: usermod -G <grupos-para onde-vai separados por virgula> <nome-do-usuaraio>
+#useradd carlos -m -s /bin/bash -p $(openssl passwd -crypt Senha123) -G GRP_ADM
+# a linha com open ssl gera um erro de parametro entao decidi excluir
 useradd carlos -m -s /bin/bash -G GRP_ADM
 useradd maria -m -s /bin/bash -G GRP_ADM
 useradd joao -m -s /bin/bash -G GRP_ADM
