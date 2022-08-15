@@ -13,17 +13,17 @@ groupadd GRP_SEC
 
 # usuarios
 # poderia ter utilizado o: usermod -G <grupos-para onde-vai separados por virgula> <nome-do-usuaraio>
-useradd carlos -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_ADM
-useradd maria -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_ADM
-useradd joao -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_ADM
+useradd carlos -m -s /bin/bash -G GRP_ADM
+useradd maria -m -s /bin/bash -G GRP_ADM
+useradd joao -m -s /bin/bash -G GRP_ADM
 
-useradd debora -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_VEN
-useradd sebastiana -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_VEN
-useradd roberto -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_VEN
+useradd debora -m -s /bin/bash -G GRP_VEN
+useradd sebastiana -m -s /bin/bash -G GRP_VEN
+useradd roberto -m -s /bin/bash -G GRP_VEN
 
-useradd josefina -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_SEC
-useradd amanda -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_SEC
-useradd rogerio -m -s /bin/bash $(openssl passd -crypt Senha123) -G GRP_SEC
+useradd josefina -m -s /bin/bash -G GRP_SEC
+useradd amanda -m -s /bin/bash -G GRP_SEC
+useradd rogerio -m -s /bin/bash -G GRP_SEC
 
 # determinando owner dos diretorios
 chown root:GRP_ADM /adm
@@ -35,3 +35,5 @@ chmod 770 /adm
 chmod 770 /ven
 chmod 770 /sec
 chmod 777 /publico
+
+exec "$@"
